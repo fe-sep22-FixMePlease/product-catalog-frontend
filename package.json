@@ -26,12 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "test": "mate-scripts test -l",
-    "lint-js": "mate-scripts lint -j",
-    "lint-css": "mate-scripts lint -s",
-    "lint": "npm run lint-js && npm run lint-css",
-    "update": "mate-scripts update",
-    
+    "lint": "npx eslint . --ignore-path .gitignore"
   },
   "eslintConfig": {
     "extends": [
