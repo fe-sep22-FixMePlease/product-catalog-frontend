@@ -1,6 +1,6 @@
 {
-  "name": "frontend",
-  "homepage": "https://fe-sep22-fulfilled.github.io/frontend/",
+  "name": "product-catalog-frontend",
+  "homepage": "https://fe-sep22-FixMePlease.github.io/product-catalog-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
