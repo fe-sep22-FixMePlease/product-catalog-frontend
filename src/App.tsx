@@ -2,12 +2,15 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from './components/HomePage/index';
 import { PageNotFound } from './components/PageNotFound/index';
 import { Phones } from './components/Phones/index';
-// import { Header } from './components/Header';
+import { Header } from './components/Header';
+import './App.scss';
 
 export const App = () => {
   return (
     <>
-      <div className="App">{/* <Header /> */}</div>
+      <div className="App">
+        <Header />
+      </div>
 
       <main>
         <Routes>
