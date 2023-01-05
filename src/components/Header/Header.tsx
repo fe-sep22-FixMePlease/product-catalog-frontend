@@ -58,7 +58,7 @@ export const Header: React.FC = () => {
                 Phones
             </a>
           </li>
-          <li className='nav__item'>
+          <li className="nav__item">
             <a
               href="/tablets"
               className={classNames(
@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
                 Tablets
             </a>
           </li>
-          <li className='nav__item'>
+          <li className="nav__item">
             <a
               href="/accessories"
               className={classNames(
