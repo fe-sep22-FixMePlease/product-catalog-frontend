@@ -2,8 +2,8 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from './components/HomePage/index';
 import { PageNotFound } from './components/PageNotFound/index';
 import { Phones } from './components/Phones/index';
-import { Header } from './components/Header';
 import './App.scss';
+import { Header } from './components/Header';
 
 export const App = () => {
   return (
