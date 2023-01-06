@@ -93,10 +93,10 @@
     color: $secondary;
     margin-right: 16px;
   }
-  
+
   &__button {
     padding: 16px;
-    background-image: url("../../images/icons/button-back.svg");
+    background-image: url('../../images/icons/button-back.svg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 32px;
@@ -104,7 +104,7 @@
     cursor: pointer;
     border: none;
     border-radius: 50%;
-  
+
     &:hover {
       transform: scale(1.05);
     }
