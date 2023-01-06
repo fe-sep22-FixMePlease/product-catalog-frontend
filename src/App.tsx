@@ -1,16 +1,19 @@
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { HomePage } from './components/HomePage/index';
-import { PageNotFound } from './components/PageNotFound/index';
-import { Phones } from './components/Phones/index';
-import './App.scss';
-import { Footer } from './components/Footer';
-import { Header } from './components/Header';
+// import { Navigate, Route, Routes } from 'react-router-dom';
+// import { HomePage } from './components/HomePage/index';
+// import { PageNotFound } from './components/PageNotFound/index';
+// import { Phones } from './components/Phones/index';
+// import './App.scss';
+// import { Footer } from './components/Footer';
+// import { Header } from './components/Header';
+import { CardItem } from './components/CardItem';
 
 export const App = () => {
   return (
     <>
       <div className="App">
-        <Header />
+        <CardItem />
+
+        {/* <Header />
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -19,7 +22,7 @@ export const App = () => {
             <Route path="/phones" element={<Phones />} />
           </Routes>
         </main>
-        <Footer />
+        <Footer /> */}
       </div>
     </>
   );
