@@ -35,12 +35,9 @@ export const Header: React.FC = () => {
           <li className="nav__item ">
             <a
               href="/"
-              className={classNames(
-                'nav__link',
-                {
-                  'is-active': isChoosen === Page.Home,
-                },
-              )}
+              className={classNames('nav__link', {
+                'is-active': isChoosen === Page.Home,
+              })}
               onClick={() => setIsChoosen(Page.Home)}
             >
               Home
@@ -49,12 +46,9 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <a
               href="/phones"
-              className={classNames(
-                'nav__link',
-                {
-                  'is-active': isChoosen === Page.Phones,
-                },
-              )}
+              className={classNames('nav__link', {
+                'is-active': isChoosen === Page.Phones,
+              })}
               onClick={() => setIsChoosen(Page.Phones)}
             >
               Phones
@@ -63,12 +57,9 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <a
               href="/tablets"
-              className={classNames(
-                'nav__link',
-                {
-                  'is-active': isChoosen === Page.Tablets,
-                },
-              )}
+              className={classNames('nav__link', {
+                'is-active': isChoosen === Page.Tablets,
+              })}
               onClick={() => setIsChoosen(Page.Tablets)}
             >
               Tablets
@@ -77,12 +68,9 @@ export const Header: React.FC = () => {
           <li className="nav__item">
             <a
               href="/accessories"
-              className={classNames(
-                'nav__link',
-                {
-                  'is-active': isChoosen === Page.Accessories,
-                },
-              )}
+              className={classNames('nav__link', {
+                'is-active': isChoosen === Page.Accessories,
+              })}
               onClick={() => setIsChoosen(Page.Accessories)}
             >
               Accessories
@@ -91,39 +79,34 @@ export const Header: React.FC = () => {
         </ul>
       </nav>
 
-      {width > 639
-        ? (
-          <div className="header__container-left-side">
-            <button type="button" className="header header__left-side-icons">
-              <img
-                src={require(
-                  '../../images/icons/Favourites.svg',
-                ).default}
-                alt="Heart Like"
-                className="header__icon"
-              />
-            </button>
-            <button type="button" className="header header__left-side-icons">
-              <img
-                src={require(
-                  '../../images/icons/ShopBag.svg',
-                ).default}
-                alt="Shopping bag"
-                className="header__icon"
-              />
-            </button>
-          </div>
-        ) : (
-          <div className="header__container-left-side">
-            <button type="button" className="header header__left-side-icons">
-              <img
-                src={require('../../images/icons/Menu.svg').default}
-                alt="Menu"
-                className="header__icon"
-              />
-            </button>
-          </div>
-        )}
+      {width > 639 ? (
+        <div className="header__container-left-side">
+          <button type="button" className="header header__left-side-icons">
+            <img
+              src={require('../../images/icons/Favourites.svg').default}
+              alt="Heart Like"
+              className="header__icon"
+            />
+          </button>
+          <button type="button" className="header header__left-side-icons">
+            <img
+              src={require('../../images/icons/ShopBag.svg').default}
+              alt="Shopping bag"
+              className="header__icon"
+            />
+          </button>
+        </div>
+      ) : (
+        <div className="header__container-left-side">
+          <button type="button" className="header header__left-side-icons">
+            <img
+              src={require('../../images/icons/Menu.svg').default}
+              alt="Menu"
+              className="header__icon"
+            />
+          </button>
+        </div>
+      )}
     </header>
   );
 };
