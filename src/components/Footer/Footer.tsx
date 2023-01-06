@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable @typescript-eslint/no-var-requires */
-/* eslint-disable global-require */
+import { Logo } from '../../images/icons/Logo';
 import './Footer.scss';
 
 const backToTop = () => {
@@ -15,11 +14,7 @@ export const Footer: React.FC = () => (
     <div className="footer__container">
       <div className="footer__logo">
         <a href="/" className="footer__logo__link">
-          <img
-            src={require('../../images/icons/Logo.svg').default}
-            alt="logo"
-            className="footer__image"
-          />
+          <Logo />
         </a>
       </div>
 
