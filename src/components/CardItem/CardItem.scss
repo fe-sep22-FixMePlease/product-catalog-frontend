@@ -1,0 +1,115 @@
+.card {
+  box-sizing: border-box;
+  padding: 32px;
+  width: 272px;
+  height: 506px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: #fff;
+  border: 1px solid #e2e6e9;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  &__image {
+    margin: 0 0 24px;
+    height: 208px;
+    width: 196px;
+    object-fit: contain;
+  }
+
+  &__title {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #0f0f11;
+  }
+
+  &__price {
+    margin-top: 0;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__sell-price {
+    display: flex;
+    justify-content: space-around;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 22px;
+    line-height: 140%;
+
+    color: #0f0f11;
+  }
+
+  &__full-price {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 28px;
+    color: #89939a;
+    text-decoration: line-through;
+  }
+
+  &__features {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  &__features::before {
+    content: '';
+    height: 1px;
+    width: 100%;
+    background-color: #e2e6e9;
+    margin-bottom: 16px;
+  }
+
+  &__feature {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__feature:last-child {
+    margin-bottom: 16px;
+  }
+
+  &__feature-name {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #89939a;
+  }
+
+  &__feature-name--value {
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: right;
+
+    color: #0f0f11;
+  }
+
+  &__buy {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+    justify-self: bottom;
+  }
+}
