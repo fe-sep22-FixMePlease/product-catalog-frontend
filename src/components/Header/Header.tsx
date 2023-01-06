@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable global-require */
 import './Header.scss';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
