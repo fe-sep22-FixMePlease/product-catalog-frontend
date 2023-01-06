@@ -1,0 +1,116 @@
+@import '../../styles/utils/mixins';
+@import '../../styles//utils/vars';
+
+.footer {
+  padding: 32px;
+  margin-top: 80px;
+  box-shadow: 0px -1px 0px $elements;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+
+    margin: auto;
+    max-width: 1130px;
+
+    @include onPhone {
+      display: block;
+    }
+  }
+
+  &__logo {
+    margin-top: 14px;
+    @include onPhone {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+
+    @include onPhone {
+      flex-direction: column;
+      margin-bottom: 32px;
+    }
+
+    @include onTablet {
+      width: 350px;
+    }
+
+    &__item {
+      display: flex;
+      list-style-type: none;
+      align-items: center;
+
+      @include onPhone {
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+      }
+
+      @include onTablet {
+        &:not(:last-child) {
+          margin-right: 107px;
+        }
+      }
+
+      @include onDesktop {
+        &:not(:last-child) {
+          margin-right: 107px;
+        }
+      }
+    }
+
+    &__link {
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 11px;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: $secondary;
+      transition-property: color;
+      transition: 0.3s;
+
+      &:hover {
+        color: $primary;
+      }
+    }
+  }
+
+  &__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: $secondary;
+    margin-right: 16px;
+  }
+
+  &__button {
+    padding: 16px;
+    background-image: url('../../images/icons/button-back.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 32px;
+    transition: all 0.3s;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.8);
+    }
+  }
+}
