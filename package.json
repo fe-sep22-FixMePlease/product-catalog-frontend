@@ -16,6 +16,7 @@
     "node-sass": "^8.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "typescript": "^4.9.4",
     "web-vitals": "^2.1.4"
@@ -29,7 +30,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore",
-    "fix-style": "npm run format && npm run lint -- --fix",
+    "fix-style": "npm run format && npm run lint",
     "prepare": "husky install"
   },
   "devDependencies": {
