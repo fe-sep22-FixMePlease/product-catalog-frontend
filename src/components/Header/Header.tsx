@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable global-require */
+/* eslint-disable react/button-has-type */
 import './Header.scss';
 import '../../styles/icon.scss';
 import { useEffect, useState } from 'react';
@@ -12,15 +15,15 @@ export const Header: React.FC = () => {
     function handleResize() {
       setWidth(window.innerWidth);
     }
-    
-    window.addEventListener('resize', handleResize)
+
+    window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   return (
     <header className="header">
-      <a href='/' className='header__main-link'>
+      <a href="/" className="header__main-link">
         <img
           src={require('../../images/icons/Logo.svg').default}
           alt="Shopping bag"
@@ -28,9 +31,9 @@ export const Header: React.FC = () => {
         />
       </a>
 
-      <nav className='nav'>
-        <ul className='nav__list'>
-          <li className='nav__item '>
+      <nav className="nav">
+        <ul className="nav__list">
+          <li className="nav__item ">
             <a
               href="/"
               className={classNames(
@@ -41,10 +44,10 @@ export const Header: React.FC = () => {
               )}
               onClick={() => setIsChoosen(Page.Home)}
             >
-                Home
+              Home
             </a>
           </li>
-          <li className='nav__item'>
+          <li className="nav__item">
             <a
               href="/phones"
               className={classNames(
@@ -55,10 +58,10 @@ export const Header: React.FC = () => {
               )}
               onClick={() => setIsChoosen(Page.Phones)}
             >
-                Phones
+              Phones
             </a>
           </li>
-          <li className='nav__item'>
+          <li className="nav__item">
             <a
               href="/tablets"
               className={classNames(
@@ -69,10 +72,10 @@ export const Header: React.FC = () => {
               )}
               onClick={() => setIsChoosen(Page.Tablets)}
             >
-                Tablets
+              Tablets
             </a>
           </li>
-          <li className='nav__item'>
+          <li className="nav__item">
             <a
               href="/accessories"
               className={classNames(
@@ -83,7 +86,7 @@ export const Header: React.FC = () => {
               )}
               onClick={() => setIsChoosen(Page.Accessories)}
             >
-                Accessories
+              Accessories
             </a>
           </li>
         </ul>
@@ -92,19 +95,19 @@ export const Header: React.FC = () => {
       {width > 639
         ? (
           <div className="header__container-left-side">
-            <button className='header header__left-side-icons'>
+            <button className="header header__left-side-icons">
               <img
                 src={require(
-                  '../../images/icons/Favourites.svg'
+                  '../../images/icons/Favourites.svg',
                 ).default}
                 alt="Heart Like"
                 className="header__icon"
               />
             </button>
-            <button className='header header__left-side-icons'>
+            <button className="header header__left-side-icons">
               <img
                 src={require(
-                  '../../images/icons/ShopBag.svg'
+                  '../../images/icons/ShopBag.svg',
                 ).default}
                 alt="Shopping bag"
                 className="header__icon"
@@ -113,7 +116,7 @@ export const Header: React.FC = () => {
           </div>
         ) : (
           <div className="header__container-left-side">
-            <button className='header header__left-side-icons'>
+            <button className="header header__left-side-icons">
               <img
                 src={require('../../images/icons/Menu.svg').default}
                 alt="Menu"
@@ -121,8 +124,7 @@ export const Header: React.FC = () => {
               />
             </button>
           </div>
-        )
-      }
+        )}
     </header>
   );
-}
+};
