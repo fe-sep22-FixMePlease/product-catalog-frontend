@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable global-require */
 import './Header.scss';
-import '../../styles/icon.scss';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Page } from './HeaderTypes';
+import { Logo } from '../../images/icons/Logo';
+import { Menu } from '../../images/icons/Menu';
+import { Favourites } from '../../images/icons/Favourites';
+import { ShopBag } from '../../images/icons/ShopBag';
 
 export const Header: React.FC = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -22,19 +25,15 @@ export const Header: React.FC = () => {
 
   return (
     <header className="header">
-      <a href="/" className="header__main-link">
-        <img
-          src={require('../../images/icons/Logo.svg').default}
-          alt="Shopping bag"
-          className="header__main-icon"
-        />
+      <a href="#/" className="header__main-link">
+        <Logo />
       </a>
 
       <nav className="nav">
         <ul className="nav__list">
           <li className="nav__item ">
             <a
-              href="/"
+              href="#/"
               className={classNames('nav__link', {
                 'is-active': isChoosen === Page.Home,
               })}
@@ -45,7 +44,7 @@ export const Header: React.FC = () => {
           </li>
           <li className="nav__item">
             <a
-              href="/phones"
+              href="#/phones"
               className={classNames('nav__link', {
                 'is-active': isChoosen === Page.Phones,
               })}
@@ -56,7 +55,7 @@ export const Header: React.FC = () => {
           </li>
           <li className="nav__item">
             <a
-              href="/tablets"
+              href="#/tablets"
               className={classNames('nav__link', {
                 'is-active': isChoosen === Page.Tablets,
               })}
@@ -67,7 +66,7 @@ export const Header: React.FC = () => {
           </li>
           <li className="nav__item">
             <a
-              href="/accessories"
+              href="#/accessories"
               className={classNames('nav__link', {
                 'is-active': isChoosen === Page.Accessories,
               })}
@@ -82,28 +81,16 @@ export const Header: React.FC = () => {
       {width > 639 ? (
         <div className="header__container-left-side">
           <button type="button" className="header header__left-side-icons">
-            <img
-              src={require('../../images/icons/Favourites.svg').default}
-              alt="Heart Like"
-              className="header__icon"
-            />
+            <Favourites />
           </button>
           <button type="button" className="header header__left-side-icons">
-            <img
-              src={require('../../images/icons/ShopBag.svg').default}
-              alt="Shopping bag"
-              className="header__icon"
-            />
+            <ShopBag />
           </button>
         </div>
       ) : (
         <div className="header__container-left-side">
           <button type="button" className="header header__left-side-icons">
-            <img
-              src={require('../../images/icons/Menu.svg').default}
-              alt="Menu"
-              className="header__icon"
-            />
+            <Menu />
           </button>
         </div>
       )}
