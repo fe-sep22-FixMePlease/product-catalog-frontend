@@ -1,5 +1,4 @@
 import './Header.scss';
-import '../../styles/icon.scss';
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { Page } from './HeaderTypes';
