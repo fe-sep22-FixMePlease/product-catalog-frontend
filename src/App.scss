@@ -1,6 +1,19 @@
 @import './styles/normalize.scss';
+@import './styles/main.scss';
 
+html {
+  height: 100%;
+  width: 100%;
+}
 body {
+  height: 100%;
+  width: 100%;
   font-size: 100%;
   font-family: Mont, sans-serif;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
