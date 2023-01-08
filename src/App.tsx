@@ -2,7 +2,7 @@
 // import { HomePage } from './components/HomePage/index';
 // import { PageNotFound } from './components/PageNotFound/index';
 // import { Phones } from './components/Phones/index';
-// import './App.scss';
+import './App.scss';
 // import { Footer } from './components/Footer';
 // import { Header } from './components/Header';
 import { CardItem } from './components/CardItem';
