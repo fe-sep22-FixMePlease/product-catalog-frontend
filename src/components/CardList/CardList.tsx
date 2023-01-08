@@ -9,11 +9,9 @@ export const CardList: FC = () => {
 
   return (
     <ul className="card-list grid">
-      {phones.map(phone => (
+      {phones.map((phone) => (
         <li key={phone.id} className="card-list__item">
-          <CardItem
-            phone={phone}
-          />
+          <CardItem phone={phone} />
         </li>
       ))}
     </ul>

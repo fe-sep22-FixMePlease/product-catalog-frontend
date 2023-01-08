@@ -4,7 +4,7 @@ import { Favourites } from '../../images/icons/Favourites';
 import { Phone } from '../../types/Phone';
 
 type Props = {
-  phone: Phone,
+  phone: Phone;
 };
 
 export const CardItem: React.FC<Props> = ({ phone }) => {
