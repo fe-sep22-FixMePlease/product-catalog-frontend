@@ -1,0 +1,19 @@
+@import '../../styles/utils/mixins';
+
+.card-list {
+  gap: 40px 16px;
+  padding: 0;
+
+  &__item {
+    list-style: none;
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 6;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+}
