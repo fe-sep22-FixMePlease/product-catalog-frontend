@@ -1,9 +1,14 @@
 import './Phones.scss';
+import { CardList } from '../CardList';
 
 export const Phones: React.FC = () => {
   return (
     <>
-      <h1 className="phones">Mobile phones</h1>
+      <section className="phones">
+        <div className="container">
+          <CardList />
+        </div>
+      </section>
     </>
   );
 };
