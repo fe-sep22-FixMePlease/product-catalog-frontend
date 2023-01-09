@@ -1,8 +1,10 @@
 /*eslint-disable*/
+import '../../styles/blocks/icon.scss';
 
 export const Favourites = () => {
   return (
     <svg
+      className="icon"
       width="16"
       height="16"
       viewBox="0 0 16 16"
