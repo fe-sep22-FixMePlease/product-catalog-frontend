@@ -31,7 +31,7 @@
     "eject": "react-scripts eject",
     "format": "prettier --write . --ignore-path .gitignore",
     "lint": "eslint . --ignore-path .gitignore",
-    "fix-style": "npm run format && npm run lint",
+    "fix-style": "npm run format && npm run lint -- --fix",
     "prepare": "husky install"
   },
   "devDependencies": {

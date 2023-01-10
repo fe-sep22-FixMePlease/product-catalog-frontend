@@ -6,10 +6,17 @@ import { Logo } from '../../images/icons/Logo';
 import { Menu } from '../../images/icons/Menu';
 import { Favourites } from '../../images/icons/Favourites';
 import { ShopBag } from '../../images/icons/ShopBag';
+import { BurgerMenu } from '../BurgerMenu';
+import { Cross } from '../../images/icons/Cross';
 
 export const Header: React.FC = () => {
   const [width, setWidth] = useState(window.innerWidth);
   const [isChoosen, setIsChoosen] = useState(Page.Home);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggle = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   useEffect(() => {
     function handleResize() {
@@ -87,9 +94,15 @@ export const Header: React.FC = () => {
         </div>
       ) : (
         <div className="header__container-left-side">
-          <button type="button" className="header header__left-side-icons">
-            <Menu />
+          <button
+            type="button"
+            className="header header__left-side-icons"
+            onClick={handleToggle}
+          >
+            {!isMenuOpen ? <Menu /> : <Cross />}
           </button>
+
+          <BurgerMenu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         </div>
       )}
     </header>
