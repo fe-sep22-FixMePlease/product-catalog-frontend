@@ -5,6 +5,7 @@ import { Phones } from './components/Phones/index';
 import './App.scss';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import { CartPage } from './components/CartPage';
 
 export const App = () => {
   return (
@@ -17,6 +18,7 @@ export const App = () => {
             <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="*" element={<PageNotFound />} />
             <Route path="/phones" element={<Phones />} />
+            <Route path="/shopBag" element={<CartPage />} />
           </Routes>
         </main>
         <Footer />

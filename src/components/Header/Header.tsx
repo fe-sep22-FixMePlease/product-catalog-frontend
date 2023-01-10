@@ -1,5 +1,6 @@
 import './Header.scss';
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import { Page } from './HeaderTypes';
 import { Logo } from '../../images/icons/Logo';
@@ -88,9 +89,16 @@ export const Header: React.FC = () => {
           <button type="button" className="header header__left-side-icons">
             <Favourites />
           </button>
-          <button type="button" className="header header__left-side-icons">
-            <ShopBag />
-          </button>
+
+          <NavLink
+            to="/shopBag"
+            className={isChoosen === Page.ShopBag ? 'is-active' : ''}
+            onClick={() => setIsChoosen(Page.ShopBag)}
+          >
+            <button type="button" className="header header__left-side-icons">
+              <ShopBag />
+            </button>
+          </NavLink>
         </div>
       ) : (
         <div className="header__container-left-side">
