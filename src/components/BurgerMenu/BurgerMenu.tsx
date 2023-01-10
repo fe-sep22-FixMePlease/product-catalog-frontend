@@ -73,11 +73,15 @@ export const BurgerMenu: FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
             </div>
           </div>
 
-          <div className="burger-menu__buttons-buttom">
+          <NavLink
+            to="/shopBag"
+            className="burger-menu__buttons-buttom"
+            onClick={() => closeMenu()}
+          >
             <div className="burger-menu__button">
               <ShopBag />
             </div>
-          </div>
+          </NavLink>
         </div>
       </div>
     </div>
