@@ -92,15 +92,10 @@ export const Header: React.FC = () => {
 
           <NavLink
             to="/shopBag"
-            className={isChoosen === Page.ShopBag
-              ? 'is-active'
-              : ''}
+            className={isChoosen === Page.ShopBag ? 'is-active' : ''}
             onClick={() => setIsChoosen(Page.ShopBag)}
           >
-            <button
-              type="button"
-              className="header header__left-side-icons"
-            >
+            <button type="button" className="header header__left-side-icons">
               <ShopBag />
             </button>
           </NavLink>
