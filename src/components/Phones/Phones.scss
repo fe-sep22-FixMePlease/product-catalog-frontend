@@ -1,25 +1,82 @@
 @import '../../styles/utils/mixins';
+@import "../../styles/utils/_vars";
 
 .phones {
-  margin: 24px 16px;
-  font-family: 'Mont';
-  font-style: normal;
-  font-weight: 800;
-  font-size: 48px;
-  line-height: 56px;
-  letter-spacing: -0.01em;
-  color: #0f0f11;
+  margin: 24px 16px 0;
 
   @include onTablet() {
-    margin: 24px 32px;
+    padding: 25px 24px 0;
   }
 
   @include onDesktop() {
-    margin: 56px 32px;
-  }
-}
+    max-width: 1200px;
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+    margin: 0 auto;
+    padding: 25px 32px 0;
+  }
+
+  &__title {
+    margin-bottom: 8px;
+
+    font-family: 'Mont';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 41px;
+
+    letter-spacing: -0.01em;
+
+    color: $primary;
+
+    @include onTablet {
+      font-size: 48px;
+      line-height: 56px;
+    }
+  }
+
+  &__items-amount {
+    margin-bottom: 32px;
+
+    display: block;
+
+    color: $secondary;
+
+    @include onTablet {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__selects {
+    margin-bottom: 24px;
+  }
+
+  &__catalog {
+    list-style: none;
+    margin-bottom: 40px;
+    row-gap: 40px;
+  }
+
+  &__item {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 6;
+    }
+
+    @media (min-width: 920px) {
+      grid-column: span 4;
+    }
+
+    @include onDesktop {
+      grid-column: span 6;
+    }
+  }
+
+  &__loader {
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
