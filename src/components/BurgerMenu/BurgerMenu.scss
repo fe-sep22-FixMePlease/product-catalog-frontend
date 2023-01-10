@@ -50,20 +50,6 @@
     text-decoration: none;
     color: #89939a;
 
-    &:hover {
-      color: #0f0f11;
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 16px;
-        left: 0;
-        height: 3px;
-        width: 100%;
-        background-color: #0f0f11;
-      }
-    }
-
     &.active {
       color: #0f0f11;
       position: relative;
