@@ -6,6 +6,7 @@ import './App.scss';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { CartPage } from './components/CartPage';
+import { SingleItemPage } from './components/SingleItemPage';
 
 export const App = () => {
   return (
@@ -18,6 +19,7 @@ export const App = () => {
             <Route path="/home" element={<Navigate to="/" replace />} />
             <Route path="*" element={<PageNotFound />} />
             <Route path="/phones" element={<Phones />} />
+            <Route path="/products/:id" element={<SingleItemPage />} />
             <Route path="/shopBag" element={<CartPage />} />
           </Routes>
         </main>

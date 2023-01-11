@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Phones.scss';
 import '../../styles/blocks/grid.scss';
+import { Link } from 'react-router-dom';
 import { getAllProducts, getSortedProducts } from '../../api/phones';
 import { Pagination } from '../Pagination';
 import { Dropdown } from '../Dropdowns';
@@ -121,7 +122,9 @@ export const Phones: React.FC = () => {
           <ul className="phones__catalog grid">
             {phones.map(phone => (
               <li key={phone.id} className="phones__item">
-                <CardItem phone={phone} />
+                <Link to={`/products/${phone.id}`}>
+                  <CardItem phone={phone} />
+                </Link>
               </li>
             ))}
           </ul>
