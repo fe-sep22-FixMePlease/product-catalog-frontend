@@ -22,11 +22,9 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
   } = phone;
 
   const {
-    setTotalPoduct,
-    totalProduct,
-    shop,
-    setShop,
-  } = useContext(UserContext);
+    setTotalPoduct, totalProduct, shop, setShop,
+  }
+    = useContext(UserContext);
 
   const handleShop = () => {
     if (shop.find((product: Phone) => product.id === id)) {
@@ -44,7 +42,7 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
     }
   };
 
-  const isSelected = !!shop.find(product => product.id === id);
+  const isSelected = !!shop.find((product) => product.id === id);
 
   return (
     <div className="card">
@@ -84,14 +82,10 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
       <div className="card__buttons">
         <button
           type="button"
-          className={isSelected
-            ? 'card__button-added'
-            : 'card__button-add'}
+          className={isSelected ? 'card__button-added' : 'card__button-add'}
           onClick={handleShop}
         >
-          {isSelected
-            ? 'Added'
-            : 'Add to cart'}
+          {isSelected ? 'Added' : 'Add to cart'}
         </button>
 
         <button type="button" className="card__button-like">

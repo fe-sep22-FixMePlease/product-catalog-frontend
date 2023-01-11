@@ -10,10 +10,13 @@ type Props = {
   isMenuOpen: boolean;
   setIsMenuOpen: (isMenuOpen: boolean) => void;
   countShop: number;
-
 };
 
-export const BurgerMenu: FC<Props> = ({ isMenuOpen, setIsMenuOpen, countShop }) => {
+export const BurgerMenu: FC<Props> = ({
+  isMenuOpen,
+  setIsMenuOpen,
+  countShop,
+}) => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -80,14 +83,9 @@ export const BurgerMenu: FC<Props> = ({ isMenuOpen, setIsMenuOpen, countShop }) 
             className="burger-menu__buttons-buttom"
             onClick={() => closeMenu()}
           >
-            <button
-              type="button"
-              className="burger-menu__button btn-reset"
-            >
+            <button type="button" className="burger-menu__button btn-reset">
               {!!countShop && (
-                <span className="burger-menu__button-counter">
-                  {countShop}
-                </span>
+                <span className="burger-menu__button-counter">{countShop}</span>
               )}
               <ShopBag />
             </button>

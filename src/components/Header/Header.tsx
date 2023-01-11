@@ -112,13 +112,10 @@ export const Header: React.FC = () => {
             <button type="button" className="header header__left-side-icons">
               <div className="header__icon">
                 {!!countShop && (
-                  <span className="header__button-counter">
-                    {countShop}
-                  </span>
+                  <span className="header__button-counter">{countShop}</span>
                 )}
                 <ShopBag />
               </div>
-
             </button>
           </NavLink>
         </div>

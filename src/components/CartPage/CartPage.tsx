@@ -22,9 +22,10 @@ export const CartPage: FC = () => {
   };
 
   const counterProducts = shop.length;
-  const totalPrice = totalProduct.reduce((acumulator, product) => (
-    acumulator + product.price
-  ), 0);
+  const totalPrice = totalProduct.reduce(
+    (acumulator, product) => acumulator + product.price,
+    0,
+  );
 
   return (
     <div className="cart-page">

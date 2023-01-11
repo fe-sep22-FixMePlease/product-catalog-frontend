@@ -3,12 +3,12 @@ import { useStorage } from '../hooks/useStorage';
 import { Phone } from '../../types/Phone';
 
 interface IUserFavorites {
-  favourites: Phone[],
-  setFavourites: (phone: Phone[]) => void,
-  shop: Phone[],
-  setShop: (phone: Phone[]) => void,
-  totalProduct: Phone[],
-  setTotalPoduct: (phone: Phone[]) => void,
+  favourites: Phone[];
+  setFavourites: (phone: Phone[]) => void;
+  shop: Phone[];
+  setShop: (phone: Phone[]) => void;
+  totalProduct: Phone[];
+  setTotalPoduct: (phone: Phone[]) => void;
 }
 
 export const UserContext = React.createContext<IUserFavorites>({
@@ -40,7 +40,7 @@ export const UserContextProvider: React.FC<Props> = ({ children }) => {
 
   return (
     <UserContext.Provider value={contextValues}>
-      { children }
+      {children}
     </UserContext.Provider>
   );
 };
