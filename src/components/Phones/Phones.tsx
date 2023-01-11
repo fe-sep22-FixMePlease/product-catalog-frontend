@@ -55,13 +55,13 @@ export const Phones: React.FC = () => {
 
   const handlePrevPage = () => {
     if (currentPage !== 1) {
-      setCurrentPage(page => page - 1);
+      setCurrentPage((page) => page - 1);
     }
   };
 
   const handleNextPage = (lastPage: number) => {
     if (currentPage !== lastPage) {
-      setCurrentPage(page => page + 1);
+      setCurrentPage((page) => page + 1);
     }
   };
 
@@ -71,17 +71,14 @@ export const Phones: React.FC = () => {
 
   return (
     <div className="phones container">
-      <h1 className="phones__title">
-        Mobile phones
-      </h1>
+      <h1 className="phones__title">Mobile phones</h1>
 
-      <span className="phones__items-amount">
-        {`${totalPhones} models`}
-      </span>
+      <span className="phones__items-amount">{`${totalPhones} models`}</span>
 
       <div className="phones__selects">
         <div className="grid">
-          <div className="
+          <div
+            className="
             grid__item--mobile-1-2
             grid__item--tablet-1-4
             grid__item--desktop-1-4
@@ -95,7 +92,8 @@ export const Phones: React.FC = () => {
             />
           </div>
 
-          <div className="
+          <div
+            className="
             grid__item--mobile-3-4
             grid__item--tablet-5-7
             grid__item--desktop-5-7
@@ -111,21 +109,19 @@ export const Phones: React.FC = () => {
         </div>
       </div>
 
-      {isLoading
-        ? (
-          <div className="phones__loader">
-            <Loader />
-          </div>
-        )
-        : (
-          <ul className="phones__catalog grid">
-            {phones.map(phone => (
-              <li key={phone.id} className="phones__item">
-                <CardItem phone={phone} />
-              </li>
-            ))}
-          </ul>
-        )}
+      {isLoading ? (
+        <div className="phones__loader">
+          <Loader />
+        </div>
+      ) : (
+        <ul className="phones__catalog grid">
+          {phones.map((phone) => (
+            <li key={phone.id} className="phones__item">
+              <CardItem phone={phone} />
+            </li>
+          ))}
+        </ul>
+      )}
 
       <Pagination
         total={totalPhones}

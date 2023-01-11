@@ -37,8 +37,8 @@ export const Pagination: React.FC<Props> = ({
 }) => {
   const lastPage = Math.ceil(total / perPage);
   const totalPages = getNumbers(lastPage);
-  const IsDisabledPrev = (currentPage === 1);
-  const IsDisabledNext = (currentPage === lastPage);
+  const IsDisabledPrev = currentPage === 1;
+  const IsDisabledNext = currentPage === lastPage;
 
   return (
     <ul className="pagination">
@@ -68,9 +68,9 @@ export const Pagination: React.FC<Props> = ({
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              className={classNames(
-                { 'pagination__button--disabled': IsDisabledPrev },
-              )}
+              className={classNames({
+                'pagination__button--disabled': IsDisabledPrev,
+              })}
               fillRule="evenodd"
               clipRule="evenodd"
               // eslint-disable-next-line max-len
@@ -81,7 +81,7 @@ export const Pagination: React.FC<Props> = ({
         </button>
       </li>
 
-      {totalPages.map(page => (
+      {totalPages.map((page) => (
         <li key={page}>
           <button
             type="button"
