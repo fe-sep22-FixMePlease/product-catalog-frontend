@@ -121,7 +121,7 @@ export const Phones: React.FC = () => {
           <ul className="phones__catalog grid">
             {phones.map(phone => (
               <li key={phone.id} className="phones__item">
-                <CardItem phone={phone} />
+                <CardItem phone={phone} phones={phones} />
               </li>
             ))}
           </ul>
