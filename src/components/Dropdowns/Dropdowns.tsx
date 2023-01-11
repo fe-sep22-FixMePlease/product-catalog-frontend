@@ -6,6 +6,7 @@ interface Props {
   title: string;
   field: string | number;
   options: string[] | number[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect: (item: any) => void;
 }
 
