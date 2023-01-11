@@ -1,4 +1,4 @@
-@import "../../styles/utils/_vars";
+@import '../../styles/utils/_vars';
 
 .pagination {
   margin-bottom: 64px;
@@ -38,12 +38,13 @@
       font-size: 14px;
       line-height: 21px;
     }
-    
+
     &--next {
       margin-left: 8px;
     }
 
-    &--prev, &--next {
+    &--prev,
+    &--next {
       transition: background-color 0.3s;
     }
 

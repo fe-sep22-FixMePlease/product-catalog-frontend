@@ -19,20 +19,16 @@ export const Dropdown: React.FC<Props> = ({
 
   return (
     <div className="dropdown">
-      <span className="dropdown__title">
-        {title}
-      </span>
+      <span className="dropdown__title">{title}</span>
 
       <button
         type="button"
         className={classNames('dropdown__field', {
           'dropdown__field--focused': isFocusing,
         })}
-        onClick={() => setIsFocusing(boolean => !boolean)}
+        onClick={() => setIsFocusing((boolean) => !boolean)}
       >
-        <span className="dropdown__field--default-name">
-          {field}
-        </span>
+        <span className="dropdown__field--default-name">{field}</span>
         <svg
           className="dropdown__button"
           width="10"
@@ -51,11 +47,12 @@ export const Dropdown: React.FC<Props> = ({
         </svg>
       </button>
 
-      <div className={classNames('dropdown__options', {
-        'dropdown__options--hidden': !isFocusing,
-      })}
+      <div
+        className={classNames('dropdown__options', {
+          'dropdown__options--hidden': !isFocusing,
+        })}
       >
-        {options.map(option => (
+        {options.map((option) => (
           <button
             type="button"
             key={option}
@@ -65,9 +62,7 @@ export const Dropdown: React.FC<Props> = ({
               setIsFocusing(false);
             }}
           >
-            <span className="dropdown__field--name">
-              {option}
-            </span>
+            <span className="dropdown__field--name">{option}</span>
           </button>
         ))}
       </div>
