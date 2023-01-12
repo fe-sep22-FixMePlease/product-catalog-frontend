@@ -19,3 +19,30 @@
     padding-right: 24px;
   }
 }
+
+.specs {
+  .spec-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    .spec-title {
+      color: #89939A;
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+    }
+
+    .spec-value {
+      font-family: 'Mont';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: right;
+    }
+  }
+}

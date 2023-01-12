@@ -28,17 +28,17 @@ export const images = [
 ];
 
 export const productDataMock = {
-  id: '1',
+  id: '7',
   category: 'phones',
-  phoneId: 'apple-iphone-7-64gb-black',
-  itemId: 'apple-iphone-7-64gb-black',
-  name: 'Apple iPhone 7 64GB Black',
-  fullPrice: 400,
-  price: 375,
-  screen: "4.7' IPS",
+  phoneId: 'apple-iphone-11-pro-64gb-gold',
+  itemId: 'apple-iphone-11-pro-64gb-gold',
+  name: 'Apple iPhone 11 Pro 64GB Gold',
+  fullPrice: 1312,
+  price: 1270,
+  screen: "5.8' OLED",
   capacity: '64GB',
-  color: 'black',
-  ram: '2GB',
-  year: 2016,
+  color: 'gold',
+  ram: '4GB',
+  year: 2019,
   image: images[0].source,
 };
