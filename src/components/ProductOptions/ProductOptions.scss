@@ -1,0 +1,111 @@
+$font-family: Mont;
+$font-size: 12px;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$line-height: 100%;
+$color-grey: #89939a;
+$color-light-grey: #b4bdc4;
+$color-dark-grey: #0f0f11;
+$color-white: #ffffff;
+$color-gold: #fcdbc1;
+$color-green: #5f7170;
+$color-space-gray: #4c4c4c;
+$color-background: #f0f0f0;
+
+.capacity {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  .capacity__header {
+    &__text {
+      height: 15px;
+      text-align: left;
+      font-family: $font-family;
+      font-size: $font-size;
+      line-height: $line-height;
+      font-weight: $font-weight-semi-bold;
+      color: $color-grey;
+    }
+  }
+  .capacity__options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    .capacity__option {
+      font-family: $font-family;
+      font-weight: $font-weight-semi-bold;
+      font-size: 14px;
+      line-height: 21px;
+      border: 1px solid $color-light-grey;
+      border-radius: 4px;
+      padding: 10px;
+      min-width: 70px;
+      margin: 0 10px 10px 0;
+      text-align: center;
+      background-color: transparent;
+      &:hover {
+        border: 1px solid $color-dark-grey;
+        cursor: pointer;
+      }
+      &.active {
+        background-color: $color-dark-grey;
+        color: $color-white;
+      }
+    }
+  }
+}
+
+
+  
+.color {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    &__text,
+    &__id {
+      width: 98px;
+      height: 15px;
+      text-align: left;
+      font-family: $font-family;
+      font-size: $font-size;
+      line-height: $line-height;
+      white-space: nowrap;
+    }
+    &__text {
+      font-weight: $font-weight-semi-bold;
+      color: $color-grey;
+    }
+    &__id {
+      font-weight: $font-weight-bold;
+      text-align: right;
+      color: $color-light-grey;
+    }
+  }
+  &__colors {
+    button {
+      width: 30px;
+      height: 30px;
+      background-color: $color-background;
+      transform: scale(1, 1);
+      margin: 10px;
+      border-radius: 14px;
+      border: 1px solid $color-light-grey;
+      box-sizing: border-box;
+      &:hover {
+        border-color: $color-dark-grey;
+      }
+      &.color__col-gold {
+        background-color: $color-gold;
+      }
+      &.color__col-green {
+        background-color: $color-green;
+      }
+      &.color__col-space-gray {
+        background-color: $color-dark-grey;
+      }
+      &.color__col-white {
+        background-color: $color-background;
+      }
+    }
+  }
+}

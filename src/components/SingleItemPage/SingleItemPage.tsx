@@ -1,10 +1,15 @@
 import { FC } from 'react';
-import { useParams } from 'react-router-dom';
+import { ImageBlock } from '../../ImageBlock';
+import { ProductOptions } from '../ProductOptions';
+import { images, productDataMock } from '../../api/TempMock/Mock';
+import './SingleItemPage.scss';
 
 export const SingleItemPage: FC = () => {
-  const { id } = useParams();
-
   return (
-    <div>{id}</div>
+    <div className="container-item-page">
+      <h1>{productDataMock.name}</h1>
+      <ImageBlock images={images} activeImage={productDataMock.image} />
+      <ProductOptions product={productDataMock} />
+    </div>
   );
 };

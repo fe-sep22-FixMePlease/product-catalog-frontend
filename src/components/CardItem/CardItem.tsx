@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './CardItem.scss';
 import { Favourites } from '../../images/icons/Favourites';
 import { Phone } from '../../types/Phone';
@@ -20,19 +21,21 @@ export const CardItem: React.FC<Props> = ({ phone }) => {
 
   return (
     <div className="card">
-      <img
-        /* eslint-disable-next-line max-len */
-        src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQJQGrGoRJOlfxJtroHXe2f-91FlEZsQUncf3aWDXfr4wO1oLrpg2j5dOBToubmJMGod52p9_PZ2XTD8UGNL1SajKEWYt37A1ei9Wa8C6xDm1r_j3hDesI5&usqp=CAc"
-        alt=""
-        className="card__image"
-      />
+      <Link to={`/phones/${phone.id}`}>
+        <img
+          /* eslint-disable-next-line max-len */
+          src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQJQGrGoRJOlfxJtroHXe2f-91FlEZsQUncf3aWDXfr4wO1oLrpg2j5dOBToubmJMGod52p9_PZ2XTD8UGNL1SajKEWYt37A1ei9Wa8C6xDm1r_j3hDesI5&usqp=CAc"
+          alt=""
+          className="card__image"
+        />
 
-      <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
+        <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 
-      <p className="card__price">
-        <span className="card__sell-price">{`$${price}`}</span>
-        <span className="card__full-price">{`$${fullPrice}`}</span>
-      </p>
+        <p className="card__price">
+          <span className="card__sell-price">{`$${price}`}</span>
+          <span className="card__full-price">{`$${fullPrice}`}</span>
+        </p>
+      </Link>
 
       <hr className="card__line" />
 
