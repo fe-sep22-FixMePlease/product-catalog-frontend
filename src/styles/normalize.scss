@@ -14,3 +14,28 @@
   font-weight: bold;
   src: url('../fonts/Mont-Bold.otf');
 }
+
+.btn-reset {
+  width: auto;
+
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+  outline: 0;
+  color: inherit;
+
+  font-family: inherit;
+  font: inherit;
+  cursor: pointer;
+
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+  transition: box-shadow 0.3s ease;
+}
