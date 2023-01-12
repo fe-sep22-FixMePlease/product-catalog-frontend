@@ -13,11 +13,7 @@ export const ImageBlock: React.FC<Props> = ({ activeImage, images }) => {
   return (
     <div className="image__block">
       <div className="image__block__hero">
-        <img
-          src={activePhoto}
-          alt="product"
-          className="image-hero"
-        />
+        <img src={activePhoto} alt="product" className="image-hero" />
       </div>
 
       <div className="image__block__secondary">
