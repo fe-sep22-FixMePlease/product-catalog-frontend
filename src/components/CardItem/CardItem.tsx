@@ -9,22 +9,12 @@ type Props = {
 
 export const CardItem: React.FC<Props> = ({ phone }) => {
   const {
-    name,
-    price,
-    fullPrice,
-    screen,
-    capacity,
-    ram,
-    image,
+    name, price, fullPrice, screen, capacity, ram, image,
   } = phone;
 
   return (
     <div className="card">
-      <img
-        src={image}
-        alt=""
-        className="card__image"
-      />
+      <img src={image} alt="" className="card__image" />
 
       <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 

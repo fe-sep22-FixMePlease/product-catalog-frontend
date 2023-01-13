@@ -1,0 +1,54 @@
+@import '../../../styles/utils/_mixins';
+
+.SliderNav {
+  margin-bottom: 66px;
+
+  @include onTablet {
+    margin-bottom: 74px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 90;
+  }
+}
+
+.slider-item {
+  display: inline-flex;
+  height: 400px;
+
+  @include onPhone {
+    height: 320px;
+  }
+
+  &__1,
+  &__2,
+  &__3 {
+    width: 100%;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+
+  &__1 {
+    background-image: url('../../../images/icons/Banner.png');
+
+    @include onPhone {
+      background-image: url('../../../images/icons/banner-mobile.png');
+    }
+  }
+
+  &__2 {
+    background-image: url('../../../images/icons/Banner.png');
+
+    @include onPhone {
+      background-image: url('../../../images/icons/banner-mobile.png');
+    }
+  }
+
+  &__3 {
+    background-image: url('../../../images/icons/Banner.png');
+
+    @include onPhone {
+      background-image: url('../../../images/icons/banner-mobile.png');
+    }
+  }
+}

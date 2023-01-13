@@ -1,0 +1,56 @@
+@import '../../../../styles/utils/_vars';
+@import '../../../../styles/utils/_mixins';
+
+.slider {
+  overflow: hidden;
+  flex-grow: 1;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+  }
+
+  &__button {
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    color: $primary;
+    width: 32px;
+    border: 1px solid #b4bdc4;
+    border-radius: 48px;
+    transition: background-color 0.3s;
+    background-color: white;
+
+    &:hover {
+      border-color: $primary;
+    }
+
+    @include onPhone {
+      display: none;
+    }
+  }
+
+  &__items-container {
+    white-space: nowrap;
+    transition: transform 0.5s linear;
+  }
+
+  &__indicators {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  &__indicator {
+    width: 14px;
+    height: 4px;
+    background-color: $elements;
+    cursor: pointer;
+
+    &-active {
+      background-color: $primary;
+    }
+  }
+}
