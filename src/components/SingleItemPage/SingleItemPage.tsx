@@ -8,9 +8,11 @@ import { ProductOptions } from '../ProductOptions';
 import { Loader } from '../Loader';
 import './SingleItemPage.scss';
 import { BackButton } from '../../images/icons/BackButton';
+// import { Phone } from '../../types/Phone';
 
 export const SingleItemPage: FC = () => {
   const [phoneData, setPhoneData] = useState<Data>();
+  // const [phones, setPhones] = useState<Phone[]>([]);
   const { phoneId } = useParams();
 
   const loadPhone = async () => {

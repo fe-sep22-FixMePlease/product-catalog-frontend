@@ -1,8 +1,11 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { FC } from 'react';
 import classnames from 'classnames';
+// import { UserContext } from '../../utils/context/Context';
 import './ProductOptions.scss';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
+import { Favourites } from '../../images/icons/Favourites';
+// import { Phone } from '../../types/Phone';
 
 interface Props {
   product: Data;
@@ -21,6 +24,32 @@ export const ProductOptions: FC<Props> = ({ product }) => {
     resolution,
     processor,
   } = product;
+
+  // const {
+  //   setTotalPoduct, totalProduct, shop, setShop,
+  // } = useContext(UserContext);
+
+  // const handleShop = (event: React.MouseEvent) => {
+  //   event.preventDefault();
+
+  //   if (shop.find((item: Phone) => item.id === id)) {
+  //     const filtredStorageList = shop.filter(
+  //       (products: Phone) => products.id !== id,
+  //     );
+
+  //     setShop(filtredStorageList);
+  //     setTotalPoduct(filtredStorageList);
+  //   } else {
+  //     const findNewPhone = phones.find((item: Phone) => item.id === id);
+
+  //     setShop([...shop, findNewPhone] as Phone[]);
+  //     setTotalPoduct([...totalProduct, findNewPhone] as Phone[]);
+  //   }
+  // };
+
+  // const isSelected = shop.some((item) => item.id === id);
+
+  const isSelected = false;
 
   return (
     <div className="ProductOptions">
@@ -72,6 +101,22 @@ export const ProductOptions: FC<Props> = ({ product }) => {
       <div className="price">
         <span className="price__current">{priceRegular}</span>
         <span className="price__full">{priceDiscount}</span>
+      </div>
+
+      <div className="buttons">
+        <button
+          type="button"
+          className={
+            isSelected ? 'buttons__button-added' : 'buttons__button-add'
+          }
+          // onClick={handleShop}
+        >
+          {isSelected ? 'Added' : 'Add to cart'}
+        </button>
+
+        <button type="button" className="buttons__button-like">
+          <Favourites />
+        </button>
       </div>
 
       <div className="specs">
