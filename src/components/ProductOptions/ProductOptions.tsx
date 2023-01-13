@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React, { FC } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import classnames from 'classnames';
 import './ProductOptions.scss';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
@@ -10,6 +11,7 @@ interface Props {
 
 export const ProductOptions: FC<Props> = ({ product }) => {
   const {
+    id,
     colorsAvailable,
     color,
     capacityAvailable,
@@ -21,6 +23,14 @@ export const ProductOptions: FC<Props> = ({ product }) => {
     resolution,
     processor,
   } = product;
+  const navigate = useNavigate();
+
+  const handleColorChange = (newColor: string) => {
+    const newId = id.replace(color, newColor);
+
+    navigate(`/phones/${newId}`);
+    window.location.reload();
+  };
 
   return (
     <div className="ProductOptions">
@@ -32,16 +42,18 @@ export const ProductOptions: FC<Props> = ({ product }) => {
         <div className="colors-block__container">
           <div className="colors-block__container">
             {colorsAvailable.map((colorOption) => (
-              <div
-                className={classnames('colors-block__wrapper', {
-                  'colors-block__wrapper-active': colorOption === color,
-                })}
-                key={colorOption}
-              >
+              <Link to={`/phones/${id.replace(color, colorOption)}`} onClick={() => handleColorChange(colorOption)}>
                 <div
-                  className={`colors-block__picker colors-block__picker-iphone-${colorOption}`}
-                />
-              </div>
+                  className={classnames('colors-block__wrapper', {
+                    'colors-block__wrapper-active': colorOption === color,
+                  })}
+                  key={colorOption}
+                >
+                  <div
+                    className={`colors-block__picker colors-block__picker-iphone-${colorOption}`}
+                  />
+                </div>
+              </Link>
             ))}
           </div>
         </div>
