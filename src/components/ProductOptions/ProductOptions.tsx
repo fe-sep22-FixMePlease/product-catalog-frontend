@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import { FC } from 'react';
+import React, { FC } from 'react';
 import classnames from 'classnames';
 import './ProductOptions.scss';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';

@@ -1,11 +1,13 @@
-import { FC, useState, useEffect } from 'react';
+import React, { FC, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { ImageBlock } from '../../ImageBlock';
-import { ProductOptions } from '../ProductOptions';
-import './SingleItemPage.scss';
 import { getProductById } from '../../api/phones';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
+
+import { ImageBlock } from '../../ImageBlock';
+import { ProductOptions } from '../ProductOptions';
 import { Loader } from '../Loader';
+import './SingleItemPage.scss';
+import { BackButton } from '../../images/icons/BackButton';
 
 export const SingleItemPage: FC = () => {
   const [phoneData, setPhoneData] = useState<Data>();
@@ -39,6 +41,7 @@ export const SingleItemPage: FC = () => {
 
   return (
     <div className="container-item-page">
+      <BackButton />
       <h1>{`${name} (iMT9G2FS/A)`}</h1>
       <div className="grid-container">
         <ImageBlock images={images} activeImage={images[0]} />
