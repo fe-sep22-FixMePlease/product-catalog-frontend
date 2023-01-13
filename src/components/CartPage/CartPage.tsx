@@ -8,13 +8,20 @@ import { Message } from '../Message/Message';
 
 export const CartPage: FC = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const { shop, totalProduct } = useContext(UserContext);
+  const {
+    shop,
+    totalProduct,
+    setShop,
+    setTotalPoduct,
+  } = useContext(UserContext);
   const navigete = useNavigate();
 
   const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
 
     setIsClicked(!isClicked);
+    setShop([]);
+    setTotalPoduct([]);
 
     setTimeout(() => {
       navigete('/');
