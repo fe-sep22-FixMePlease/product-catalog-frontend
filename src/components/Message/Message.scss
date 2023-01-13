@@ -1,4 +1,5 @@
 @import '../../styles/utils/vars';
+@import '../../styles/utils/mixins';
 
 .message {
   &__wrapper {
@@ -20,10 +21,10 @@
 
   &__box {
     position: absolute;
-    top: 30%;
+    top: 40%;
     left: 10%;
     right: 10%;
-    padding: 56px 80px;
+    padding: 46px 50px;
     background-color: $green;
     border: 1px solid $secondary;
     border-radius: 40px;
@@ -39,6 +40,20 @@
   }
 
   &__title {
+    text-align: center;
+    font-size: 11px;
     margin: 0;
+  }
+}
+
+@include onTablet() {
+  .message {
+    &__box {
+      padding: 56px 70px;
+    }
+
+    &__title {
+      font-size: 16px;
+    }
   }
 }

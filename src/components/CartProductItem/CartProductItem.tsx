@@ -12,10 +12,7 @@ type Props = {
 
 export const CartProductItem: React.FC<Props> = ({ productInfo }) => {
   const {
-    image,
-    name,
-    price,
-    id,
+    image, name, price, id,
   } = productInfo;
 
   const {
