@@ -34,6 +34,8 @@ export const Footer: React.FC = () => (
           <a
             className="footer__nav__link"
             href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
+            target="_blank"
+            rel="noreferrer"
           >
             contacts
           </a>
@@ -42,6 +44,8 @@ export const Footer: React.FC = () => (
           <a
             className="footer__nav__link"
             href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
+            target="_blank"
+            rel="noreferrer"
           >
             rights
           </a>

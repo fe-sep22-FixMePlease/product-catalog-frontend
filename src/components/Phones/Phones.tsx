@@ -16,7 +16,7 @@ export const Phones: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
 
-  const sortByOptions = ['newest', 'alphabetically', 'cheapest'];
+  const sortByOptions = ['Newest', 'Alphabetically', 'Cheapest'];
   const perPageOptions = [8, 16, 32, 64];
 
   const loadPhones = async () => {
