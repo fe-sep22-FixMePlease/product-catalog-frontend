@@ -14,6 +14,7 @@ export const CartPage: FC = () => {
     setShop,
     setTotalPoduct,
   } = useContext(UserContext);
+
   const navigete = useNavigate();
   const [isCompleted, setIsCompleted] = useState(false);
 
@@ -21,6 +22,8 @@ export const CartPage: FC = () => {
     event.preventDefault();
 
     setIsClicked(!isClicked);
+    setShop([]);
+    setTotalPoduct([]);
 
     if (!isCompleted && shop.length) {
       setShop([]);
