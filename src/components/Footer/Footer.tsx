@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import { Logo } from '../../images/icons/Logo';
 import './Footer.scss';
@@ -22,7 +23,6 @@ export const Footer: React.FC = () => (
         <li className="footer__nav__item">
           <a
             className="footer__nav__link"
-            // eslint-disable-next-line max-len
             href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
             target="_blank"
             rel="noreferrer"
@@ -31,12 +31,18 @@ export const Footer: React.FC = () => (
           </a>
         </li>
         <li className="footer__nav__item">
-          <a className="footer__nav__link" href="/">
+          <a
+            className="footer__nav__link"
+            href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
+          >
             contacts
           </a>
         </li>
         <li className="footer__nav__item">
-          <a className="footer__nav__link" href="/">
+          <a
+            className="footer__nav__link"
+            href="https://github.com/fe-sep22-FixMePlease/product-catalog-frontend"
+          >
             rights
           </a>
         </li>
