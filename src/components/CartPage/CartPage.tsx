@@ -9,11 +9,9 @@ import { Message } from '../Message/Message';
 export const CartPage: FC = () => {
   const [isClicked, setIsClicked] = useState(false);
   const {
-    shop,
-    totalProduct,
-    setShop,
-    setTotalPoduct,
-  } = useContext(UserContext);
+    shop, totalProduct, setShop, setTotalPoduct,
+  }
+    = useContext(UserContext);
   const navigete = useNavigate();
 
   const handleClick = (event: React.MouseEvent) => {
