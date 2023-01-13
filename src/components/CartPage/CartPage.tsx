@@ -8,17 +8,30 @@ import { Message } from '../Message/Message';
 
 export const CartPage: FC = () => {
   const [isClicked, setIsClicked] = useState(false);
-  const { shop, totalProduct } = useContext(UserContext);
+  const {
+    shop,
+    totalProduct,
+    setShop,
+    setTotalPoduct,
+  } = useContext(UserContext);
   const navigete = useNavigate();
+  const [isCompleted, setIsCompleted] = useState(false);
 
   const handleClick = (event: React.MouseEvent) => {
     event.preventDefault();
 
     setIsClicked(!isClicked);
 
-    setTimeout(() => {
-      navigete('/');
-    }, 2000);
+    if (!isCompleted && shop.length) {
+      setShop([]);
+      setTotalPoduct([]);
+      localStorage.setItem('cartItems', '[]');
+      setIsCompleted(true);
+
+      setTimeout(() => {
+        navigete('/');
+      }, 2000);
+    }
   };
 
   const counterProducts = shop.length;
