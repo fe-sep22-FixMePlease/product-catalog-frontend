@@ -16,7 +16,7 @@ export async function getSortedProducts(
   perPage: number,
 ) {
   const response = await fetch(
-    `${API_URL}/products?page=${page}&perPage=${perPage}&sortBy=${sortBy}&category=${category}`,
+    `${API_URL}/products?page=${page}&perPage=${perPage}&sortBy=${sortBy.toLowerCase()}&category=${category}`,
   );
 
   return response.json();
