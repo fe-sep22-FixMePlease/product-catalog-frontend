@@ -19,7 +19,7 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
     screen,
     capacity,
     ram,
-    // image,
+    image,
   } = phone;
 
   const {
@@ -48,12 +48,7 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
   return (
     <div className="card">
       <Link to={`/phones/${phone.phoneId}`} className="no-underline">
-        <img
-          /* eslint-disable-next-line max-len */
-          src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQJQGrGoRJOlfxJtroHXe2f-91FlEZsQUncf3aWDXfr4wO1oLrpg2j5dOBToubmJMGod52p9_PZ2XTD8UGNL1SajKEWYt37A1ei9Wa8C6xDm1r_j3hDesI5&usqp=CAc"
-          alt=""
-          className="card__image"
-        />
+        <img src={image} alt="" className="card__image" />
 
         <h2 className="card__title">{`${name} (iMT9G2FS/A)`}</h2>
 
