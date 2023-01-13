@@ -256,8 +256,7 @@ $colors: (
         border-color: #a8a8a8;
       }
 
-      @each $color,
-      $value in $colors {
+      @each $color, $value in $colors {
         &.colors-block__picker-#{$color} {
           background-color: $value;
         }
