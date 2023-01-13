@@ -9,9 +9,14 @@ import './BurgerMenu.scss';
 type Props = {
   isMenuOpen: boolean;
   setIsMenuOpen: (isMenuOpen: boolean) => void;
+  countShop: number;
 };
 
-export const BurgerMenu: FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
+export const BurgerMenu: FC<Props> = ({
+  isMenuOpen,
+  setIsMenuOpen,
+  countShop,
+}) => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -78,9 +83,12 @@ export const BurgerMenu: FC<Props> = ({ isMenuOpen, setIsMenuOpen }) => {
             className="burger-menu__buttons-buttom"
             onClick={() => closeMenu()}
           >
-            <div className="burger-menu__button">
+            <button type="button" className="burger-menu__button btn-reset">
+              {!!countShop && (
+                <span className="burger-menu__button-counter">{countShop}</span>
+              )}
               <ShopBag />
-            </div>
+            </button>
           </NavLink>
         </div>
       </div>

@@ -25,7 +25,6 @@ export async function getSortedProducts(
 const BACKUP_URL
   = 'https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/api/';
 
-// тестирую
 export async function getProductById(productId: string) {
   const response = await fetch(`${BACKUP_URL}/phones/${productId}.json`);
 
