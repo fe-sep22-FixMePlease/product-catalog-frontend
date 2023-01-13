@@ -55,7 +55,7 @@ export const Phones: React.FC = () => {
 
   const handlePrevPage = () => {
     if (currentPage !== 1) {
-      setCurrentPage((page) => page - 1);
+      setCurrentPage(page => page - 1);
     }
   };
 

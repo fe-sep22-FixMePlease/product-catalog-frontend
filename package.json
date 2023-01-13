@@ -43,7 +43,8 @@
     "gh-pages": "^4.0.0",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1"
+    "prettier": "^2.8.1",
+    "react-url-loader": "0.0.4"
   },
   "eslintConfig": {
     "extends": [

@@ -7,6 +7,7 @@ import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import { CartPage } from './components/CartPage';
 import { UserContextProvider } from './utils/context/Context';
+import { SingleItemPage } from './components/SingleItemPage';
 
 export const App: React.FC = () => (
   <UserContextProvider>
@@ -18,6 +19,7 @@ export const App: React.FC = () => (
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<PageNotFound />} />
           <Route path="/phones" element={<Phones />} />
+          <Route path="/phones/:phoneId" element={<SingleItemPage />} />
           <Route path="/shopBag" element={<CartPage />} />
         </Routes>
       </main>
