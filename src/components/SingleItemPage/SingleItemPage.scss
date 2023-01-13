@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding-left: 16px;
   padding-right: 16px;
+  overflow: auto;
 
   transition: 0.3s;
 
@@ -34,6 +35,12 @@
       font-weight: 600;
       font-size: 12px;
       line-height: 15px;
+
+      &__main {
+        color: #89939a;
+        font-weight: 500;
+        font-size: 14px;
+      }
     }
 
     .spec-value {
@@ -43,6 +50,48 @@
       font-size: 12px;
       line-height: 15px;
       text-align: right;
+
+      &__main {
+        font-size: 600;
+      }
     }
   }
+}
+
+.grid-container {
+  display: grid;
+  gap: 75px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    'image options'
+    'about specs';
+}
+
+.grid > * {
+  margin: 16px;
+}
+
+.grid > .ImageBlock {
+  grid-area: image;
+}
+
+.grid > .ProductOptions {
+  grid-area: options;
+}
+
+.grid > .about {
+  grid-area: about;
+}
+
+.grid > .specs {
+  grid-area: specs;
+}
+
+.loader-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 10px);
+  overflow: auto;
 }
