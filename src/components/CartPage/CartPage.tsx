@@ -1,5 +1,6 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { UserContext } from '../../utils/context/Context';
 import { CartProductList } from '../CartProductList';
 import { BackButton } from '../../images/icons/BackButton';
 import './CartPage.scss';
@@ -7,6 +8,7 @@ import { Message } from '../Message/Message';
 
 export const CartPage: FC = () => {
   const [isClicked, setIsClicked] = useState(false);
+  const { shop, totalProduct } = useContext(UserContext);
   const navigete = useNavigate();
 
   const handleClick = (event: React.MouseEvent) => {
@@ -18,6 +20,12 @@ export const CartPage: FC = () => {
       navigete('/');
     }, 2000);
   };
+
+  const counterProducts = shop.length;
+  const totalPrice = totalProduct.reduce(
+    (acumulator, product) => acumulator + product.price,
+    0,
+  );
 
   return (
     <div className="cart-page">
@@ -33,26 +41,31 @@ export const CartPage: FC = () => {
 
       <div className="cart-page__title">Cart</div>
 
-      <div className="cart-page__product-list">
-        <CartProductList />
-      </div>
+      <div className="cart-page__container">
+        <div className="cart-page__product-list">
+          <CartProductList />
+        </div>
 
-      <div className="cart-page__checkout">
-        <div className="cart-page__total-price">{`$${'1000'}`}</div>
+        <div className="cart-page__checkout">
+          <div className="cart-page__total-price">{`$${totalPrice}`}</div>
 
-        <div className="cart-page__counter">Total for 3 items</div>
+          <div className="cart-page__counter">
+            {`Total for ${counterProducts} items`}
+          </div>
 
-        <div className="cart-page__line" />
+          <div className="cart-page__line" />
 
-        <button
-          type="button"
-          className="cart-page__checkout-button"
-          onClick={handleClick}
-        >
-          Checkout
-        </button>
+          <button
+            type="button"
+            className="cart-page__checkout-button"
+            onClick={handleClick}
+            disabled={!counterProducts}
+          >
+            Checkout
+          </button>
 
-        <Message isActive={isClicked} />
+          <Message isActive={isClicked} />
+        </div>
       </div>
     </div>
   );

@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../../utils/context/Context';
 import './CardItem.scss';
 import { Favourites } from '../../images/icons/Favourites';
 import { Phone } from '../../types/Phone';
 
 type Props = {
   phone: Phone;
+  phones: Phone[];
 };
 
-export const CardItem: React.FC<Props> = ({ phone }) => {
+export const CardItem: React.FC<Props> = ({ phone, phones }) => {
   const {
-    name, price, fullPrice, screen, capacity, ram, image,
+    id,
+    name,
+    price,
+    fullPrice,
+    screen,
+    capacity,
+    ram,
+    image,
   } = phone;
+
+  const {
+    setTotalPoduct, totalProduct, shop, setShop,
+  }
+    = useContext(UserContext);
+
+  const handleShop = () => {
+    if (shop.find((product: Phone) => product.id === id)) {
+      const filtredStorageList = shop.filter(
+        (products: Phone) => products.id !== id,
+      );
+
+      setShop(filtredStorageList);
+      setTotalPoduct(filtredStorageList);
+    } else {
+      const findNewPhone = phones.find((product: Phone) => product.id === id);
+
+      setShop([...shop, findNewPhone] as Phone[]);
+      setTotalPoduct([...totalProduct, findNewPhone] as Phone[]);
+    }
+  };
+
+  const isSelected = !!shop.find((product) => product.id === id);
 
   return (
     <div className="card">
@@ -43,8 +75,12 @@ export const CardItem: React.FC<Props> = ({ phone }) => {
       </div>
 
       <div className="card__buttons">
-        <button type="button" className="card__button-add">
-          Add to cart
+        <button
+          type="button"
+          className={isSelected ? 'card__button-added' : 'card__button-add'}
+          onClick={handleShop}
+        >
+          {isSelected ? 'Added' : 'Add to cart'}
         </button>
 
         <button type="button" className="card__button-like">
