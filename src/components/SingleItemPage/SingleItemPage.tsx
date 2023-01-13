@@ -1,5 +1,5 @@
 import React, { FC, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { getProductById } from '../../api/phones';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
 
@@ -41,7 +41,15 @@ export const SingleItemPage: FC = () => {
 
   return (
     <div className="container-item-page">
-      <BackButton />
+      <Link to="/">
+        <button type="button" className="cart-page__button-back">
+          <div className="cart-page__back-img">
+            <BackButton />
+          </div>
+
+          <div className="cart-page__back-title">Back</div>
+        </button>
+      </Link>
       <h1>{`${name} (iMT9G2FS/A)`}</h1>
       <div className="grid-container">
         <ImageBlock images={images} activeImage={images[0]} />
