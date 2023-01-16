@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import './ImageBlock.scss';
 
 const BASE_URL
   // eslint-disable-next-line max-len
@@ -12,13 +11,6 @@ interface Props {
 
 export const ImageBlock: React.FC<Props> = React.memo(({ images }) => {
   const [activePhoto, setActivePhoto] = useState(images[0]);
-  const [transitioning, setTransitioning] = useState(false);
-
-  useEffect(() => {
-    if (transitioning) {
-      setTimeout(() => setTransitioning(false), 100);
-    }
-  }, [transitioning]);
 
   useEffect(() => {
     setActivePhoto(images[0]);
@@ -30,8 +22,7 @@ export const ImageBlock: React.FC<Props> = React.memo(({ images }) => {
         <img
           src={`${BASE_URL}${activePhoto}`}
           alt="product"
-          className={classNames('image-hero', 'fade')}
-          style={{ animation: transitioning ? 'fade 0.2s' : 'none' }}
+          className="image-hero"
         />
       </div>
 
@@ -43,10 +34,7 @@ export const ImageBlock: React.FC<Props> = React.memo(({ images }) => {
             className={classNames('image__block__secondary__wrapper', {
               'image__block-active': source === activePhoto,
             })}
-            onClick={() => {
-              setTransitioning(true);
-              setActivePhoto(source);
-            }}
+            onClick={() => setActivePhoto(source)}
             aria-label={`Switch image to ${id}`}
           >
             <img

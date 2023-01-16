@@ -1,12 +1,10 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React, { FC } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 import classnames from 'classnames';
-// import { UserContext } from '../../utils/context/Context';
 import './ProductOptions.scss';
 import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
 import { Favourites } from '../../images/icons/Favourites';
-// import { Phone } from '../../types/Phone';
 
 interface Props {
   product: Data;
@@ -26,38 +24,6 @@ export const ProductOptions: FC<Props> = ({ product }) => {
     resolution,
     processor,
   } = product;
-  const navigate = useNavigate();
-
-  const handleColorChange = (newColor: string) => {
-    const newId = id.replace(color, newColor);
-
-    navigate(`/phones/${newId}`);
-    window.location.reload();
-  };
-
-  // const {
-  //   setTotalPoduct, totalProduct, shop, setShop,
-  // } = useContext(UserContext);
-
-  // const handleShop = (event: React.MouseEvent) => {
-  //   event.preventDefault();
-
-  //   if (shop.find((item: Phone) => item.id === id)) {
-  //     const filtredStorageList = shop.filter(
-  //       (products: Phone) => products.id !== id,
-  //     );
-
-  //     setShop(filtredStorageList);
-  //     setTotalPoduct(filtredStorageList);
-  //   } else {
-  //     const findNewPhone = phones.find((item: Phone) => item.id === id);
-
-  //     setShop([...shop, findNewPhone] as Phone[]);
-  //     setTotalPoduct([...totalProduct, findNewPhone] as Phone[]);
-  //   }
-  // };
-
-  // const isSelected = shop.some((item) => item.id === id);
 
   const isSelected = false;
 
@@ -65,26 +31,24 @@ export const ProductOptions: FC<Props> = ({ product }) => {
     <div className="ProductOptions">
       <div className="color">
         <div className="color__header">
-          <div className="color__header__text title">Available colors</div>
-          <div className="color__header__id">ID:802390</div>
+          <span className="color__header__text title">Available colors</span>
+          <span className="color__header__id">ID:802390</span>
         </div>
-        <div className="colors-block__container">
-          <div className="colors-block__container">
-            {colorsAvailable.map((colorOption) => (
-              <Link to={`/phones/${id.replace(color, colorOption)}`} onClick={() => handleColorChange(colorOption)}>
+        <div className="color-options">
+          {colorsAvailable.map((colorOption) => (
+            <Link to={`/phones/${id.replace(color, colorOption)}`}>
+              <div
+                className={classnames('colors-block__wrapper', {
+                  active: colorOption === color,
+                })}
+                key={colorOption}
+              >
                 <div
-                  className={classnames('colors-block__wrapper', {
-                    'colors-block__wrapper-active': colorOption === color,
-                  })}
-                  key={colorOption}
-                >
-                  <div
-                    className={`colors-block__picker colors-block__picker-iphone-${colorOption}`}
-                  />
-                </div>
-              </Link>
-            ))}
-          </div>
+                  className={`colors-block__picker colors-block__picker-${colorOption}`}
+                />
+              </div>
+            </Link>
+          ))}
         </div>
         <hr />
         <div className="capacity">
@@ -95,15 +59,21 @@ export const ProductOptions: FC<Props> = ({ product }) => {
           </div>
           <div className="capacity__options">
             {capacityAvailable.map((option) => (
-              <button
-                className={classnames('capacity__option', {
-                  active: capacity === option,
-                })}
-                type="button"
-                key={option}
+              <Link
+                to={`/phones/${id.replace(
+                  capacity.toLocaleLowerCase(),
+                  option.toLocaleLowerCase(),
+                )}`}
               >
-                {option}
-              </button>
+                <div
+                  className={classnames('capacity__option', {
+                    active: capacity === option,
+                  })}
+                  key={option}
+                >
+                  {option}
+                </div>
+              </Link>
             ))}
           </div>
         </div>

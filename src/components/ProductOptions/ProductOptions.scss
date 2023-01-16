@@ -1,175 +1,66 @@
-@import '../../styles/utils/vars';
+@import '../../styles/utils/_vars.scss';
+@import '../../styles/utils/_mixins.scss';
 
-// $font-family: Mont;
-// $font-size: 12px;
-// $font-weight-semi-bold: 600;
-// $font-weight-bold: 700;
-// $line-height: 100%;
-// $color-gray: #89939a;
-// $color-light-gray: #b4bdc4;
-// $color-dark-gray: #0f0f11;
-// $color-white: #ffffff;
-// $color-gold: #fcdbc1;
-// $color-green: #5f7170;
-// $color-space-gray: #4c4c4c;
-// $color-background: #f0f0f0;
-
-// .capacity {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: flex-start;
-
-//   .capacity__header {
-//     margin-bottom: 8px;
-//   }
-
-//   .capacity__options {
-//     display: flex;
-//     flex-wrap: wrap;
-//     justify-content: flex-start;
-
-//     .capacity__option {
-//       font-family: $font-family;
-//       font-weight: $font-weight-semi-bold;
-//       font-size: 14px;
-//       line-height: 21px;
-//       border: 1px solid $color-light-gray;
-//       border-radius: 4px;
-//       padding: 10px;
-//       min-width: 70px;
-//       margin: 0 10px 10px 0;
-//       text-align: center;
-//       background-color: transparent;
-
-//       &:hover {
-//         border: 1px solid $color-dark-gray;
-//         cursor: pointer;
-//       }
-
-//       &.active {
-//         background-color: $color-dark-gray;
-//         color: $color-white;
-//       }
-//     }
-//   }
-// }
-// .colors-block__container {
-//   display: flex;
-//   justify-content: flex-start;
-//   .colors-block__wrapper {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 32px;
-//     height: 32px;
-//     border: 2px solid #e2e6e9;
-//     border-radius: 50%;
-//     margin-right: 8px;
-//     &:hover {
-//       border-color: #a8a8a8;
-//     }
-//     .colors-block__picker {
-//       padding: 1px;
-//       width: 28px;
-//       height: 28px;
-//       background-color: #ffffff;
-//       border-radius: 14px;
-//       margin: 1px;
-//       box-sizing: border-box;
-//       &:hover {
-//         border-color: #a8a8a8;
-//       }
-//       &.colors-block__picker-gold {
-//         background-color: $color-gold;
-//       }
-//       &.colors-block__picker-gray {
-//         background-color: $color-light-gray;
-//       }
-//       &.colors-block__picker-green {
-//         background-color: $color-green;
-//       }
-//       &.colors-block__picker-white {
-//         background-color: $color-background;
-//       }
-//     }
-//   }
-// }
-
-// .color {
-//   &__header {
-//     display: flex;
-//     justify-content: space-between;
-//     margin-bottom: 8px;
-
-//     &__id {
-//       font-weight: $font-weight-bold;
-//       text-align: right;
-//       color: $color-light-gray;
-//     }
-//   }
-// }
-// .price {
-//   display: flex;
-//   align-items: center;
-
-//   &__current {
-//     font-family: 'Mont';
-//     font-style: normal;
-//     font-weight: 800;
-//     font-size: 32px;
-//     line-height: 41px;
-//     letter-spacing: -0.01em;
-//     color: #0f0f11;
-//     margin-right: 8px;
-
-//     &:before {
-//       content: '$';
-//     }
-//   }
-
-//   &__full {
-//     font-family: 'Mont';
-//     font-style: normal;
-//     font-weight: 500;
-//     font-size: 22px;
-//     line-height: 28px;
-//     text-decoration-line: line-through;
-//     color: #89939a;
-
-//     &:before {
-//       content: '$';
-//     }
-//   }
-// }
-
-// .title {
-//   height: 15px;
-//   text-align: left;
-//   font-family: $font-family;
-//   font-size: $font-size;
-//   line-height: $line-height;
-//   white-space: nowrap;
-//   font-weight: $font-weight-semi-bold;
-//   color: $color-gray;
-// }
 $font-family: Mont;
 $font-size: 12px;
 $font-weight-semi-bold: 600;
 $font-weight-bold: 700;
 $line-height: 100%;
-$color-gray: #89939a;
-$color-light-gray: #b4bdc4;
-$color-dark-gray: #0f0f11;
-$color-white: #ffffff;
-$color-gold: #fcdbc1;
-$color-green: #5f7170;
-$color-space-gray: #4c4c4c;
-$color-background: #f0f0f0;
+$transition-time: 0.3s;
+
+.color-options {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 25px;
+
+  .colors-block__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 2px solid $elements;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: all $transition-time ease;
+
+    &:hover {
+      border-color: #a8a8a8;
+      transform: scale(1.05) translate(0, -0.15rem);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+    }
+
+    &.active {
+      border-color: #5f7170;
+      transform: scale(1) translate(0, 0);
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .colors-block__picker {
+      width: 28px;
+      height: 28px;
+      background-color: $white;
+      border-radius: 14px;
+      box-sizing: border-box;
+
+      @each $color, $value in $iphone-colors {
+        &.colors-block__picker-#{$color} {
+          background-color: $value;
+        }
+      }
+    }
+  }
+}
+
+a:link {
+  text-decoration: none;
+}
 
 .capacity {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  margin: 25px 0 25px;
 
   .capacity__header {
     margin-bottom: 8px;
@@ -179,90 +70,40 @@ $color-background: #f0f0f0;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 10px;
 
     .capacity__option {
-      font-family: $font-family;
+      color: $primary;
       font-weight: $font-weight-semi-bold;
       font-size: 14px;
       line-height: 21px;
-      border: 1px solid $color-light-gray;
+      border: 2px solid $elements;
       border-radius: 4px;
-      padding: 10px;
+      padding: 10px 0 10px;
       min-width: 70px;
-      margin: 0 10px 10px 0;
       text-align: center;
       background-color: transparent;
+      transition: all $transition-time ease;
 
       &:hover {
-        border: 1px solid $color-dark-gray;
+        border-color: $icons;
         cursor: pointer;
+        transform: scale(1.05) translate(0, -0.15rem);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
       }
 
       &.active {
-        background-color: $color-dark-gray;
-        color: $color-white;
+        background-color: $primary;
+        color: $white;
+        transform: scale(1) translate(0, 0);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
       }
     }
   }
 }
 
-$colors: (
-  'iphone-yellow': #f4ba47,
-  'iphone-green': #27ae60,
-  'iphone-red': #eb5757,
-  'iphone-gold': #fcdbc1,
-  'iphone-spacegray': #5f7170,
-  'iphone-black': #000000,
-  'iphone-rosegold': #f9b2a2,
-  'iphone-silver': #c0c0c0,
-  'iphone-gray': #c0c0c0,
-  'iphone-purple': #4219d0,
-  'iphone-white': #f0f0f0,
-  'iphone-coral': #ee7762,
-);
-
-.colors-block__container {
-  display: flex;
-  justify-content: flex-start;
-
-  .colors-block__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-    border: 2px solid #e2e6e9;
-    border-radius: 50%;
-    margin-right: 8px;
-
-    &:hover {
-      border-color: #a8a8a8;
-    }
-
-    &-active {
-      border-color: #0f0f11;
-    }
-
-    .colors-block__picker {
-      padding: 1px;
-      width: 28px;
-      height: 28px;
-      background-color: #ffffff;
-      border-radius: 14px;
-      margin: 1px;
-      box-sizing: border-box;
-
-      &:hover {
-        border-color: #a8a8a8;
-      }
-
-      @each $color, $value in $colors {
-        &.colors-block__picker-#{$color} {
-          background-color: $value;
-        }
-      }
-    }
-  }
+hr {
+  border-color: $elements;
 }
 
 .color {
@@ -274,7 +115,7 @@ $colors: (
     &__id {
       font-weight: $font-weight-bold;
       text-align: right;
-      color: $color-light-gray;
+      color: $icons;
     }
   }
 }
@@ -284,14 +125,11 @@ $colors: (
   align-items: center;
 
   &__current {
-    font-family: 'Mont';
-    font-style: normal;
+    margin-right: 8px;
+
     font-weight: 800;
     font-size: 32px;
-    line-height: 41px;
-    letter-spacing: -0.01em;
-    color: #0f0f11;
-    margin-right: 8px;
+    color: $primary;
 
     &:before {
       content: '$';
@@ -299,13 +137,10 @@ $colors: (
   }
 
   &__full {
-    font-family: 'Mont';
-    font-style: normal;
     font-weight: 500;
     font-size: 22px;
-    line-height: 28px;
     text-decoration-line: line-through;
-    color: #89939a;
+    color: $secondary;
 
     &:before {
       content: '$';
@@ -378,10 +213,9 @@ $colors: (
 .title {
   height: 15px;
   text-align: left;
-  font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   white-space: nowrap;
   font-weight: $font-weight-semi-bold;
-  color: $color-gray;
+  color: $secondary;
 }

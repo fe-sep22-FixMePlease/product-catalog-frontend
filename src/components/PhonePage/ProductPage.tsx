@@ -6,13 +6,11 @@ import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
 import { ImageBlock } from '../../ImageBlock';
 import { ProductOptions } from '../ProductOptions';
 import { Loader } from '../Loader';
-import './SingleItemPage.scss';
+import './PhonePage.scss';
 import { BackButton } from '../../images/icons/BackButton';
-// import { Phone } from '../../types/Phone';
 
-export const SingleItemPage: FC = () => {
+export const PhonePage: FC = () => {
   const [phoneData, setPhoneData] = useState<Data>();
-  // const [phones, setPhones] = useState<Phone[]>([]);
   const { phoneId } = useParams();
 
   const loadPhone = async () => {
@@ -29,17 +27,15 @@ export const SingleItemPage: FC = () => {
 
   useEffect(() => {
     loadPhone();
-  }, []);
+  }, [phoneId]);
 
   if (!phoneData) {
     return (
-      <div className="loader-container">
+      <div className="phones__loader">
         <Loader />
       </div>
     );
   }
-
-  const { name, images, description } = phoneData;
 
   return (
     <div className="container-item-page">
@@ -52,14 +48,34 @@ export const SingleItemPage: FC = () => {
           <div className="cart-page__back-title">Back</div>
         </button>
       </Link>
-      <h1>{`${name} (iMT9G2FS/A)`}</h1>
-      <div className="grid-container">
-        <ImageBlock images={images} activeImage={images[0]} />
-        <ProductOptions product={phoneData} />
-        <div className="about">
+      <h1>{`${phoneData.name} (iMT9G2FS/A)`}</h1>
+      <div className="grid">
+        <div
+          className="
+          grid__item--mobile-1-4
+          grid__item--tablet-1-7
+          grid__item--desktop-1-12"
+        >
+          <ImageBlock images={phoneData.images} />
+        </div>
+        <div
+          className="
+        grid__item--mobile-1-4
+        grid__item--tablet-8-12
+        grid__item--desktop-13-24"
+        >
+          <ProductOptions product={phoneData} />
+        </div>
+        <div
+          className="
+        about
+        grid__item--mobile-1-4
+        grid__item--tablet-1-12
+        grid__item--desktop-1-12"
+        >
           <h2>About</h2>
           <hr />
-          {description.map(({ title, text }) => (
+          {phoneData.description.map(({ title, text }) => (
             <article key={title}>
               <h4>{title}</h4>
               <div>
@@ -70,7 +86,13 @@ export const SingleItemPage: FC = () => {
             </article>
           ))}
         </div>
-        <div className="specs">
+        <div
+          className="
+        specs
+         grid__item--mobile-1-4
+         grid__item--tablet-1-12
+         grid__item--desktop-13-24"
+        >
           <h2>Tech Specs</h2>
           <hr />
           <div className="spec-item">
