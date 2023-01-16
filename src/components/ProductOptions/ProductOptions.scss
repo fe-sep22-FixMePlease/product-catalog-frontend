@@ -8,7 +8,6 @@ $font-weight-bold: 700;
 $line-height: 100%;
 $transition-time: 0.3s;
 
-
 .color-options {
   display: flex;
   justify-content: flex-start;
@@ -24,7 +23,6 @@ $transition-time: 0.3s;
     border-radius: 50%;
     margin-right: 8px;
     transition: all $transition-time ease;
-
 
     &:hover {
       border-color: #a8a8a8;
@@ -45,8 +43,7 @@ $transition-time: 0.3s;
       border-radius: 14px;
       box-sizing: border-box;
 
-      @each $color,
-      $value in $iphone-colors {
+      @each $color, $value in $iphone-colors {
         &.colors-block__picker-#{$color} {
           background-color: $value;
         }
@@ -136,7 +133,6 @@ a:link {
   }
 
   &__full {
-
     font-weight: 500;
     font-size: 22px;
     text-decoration-line: line-through;

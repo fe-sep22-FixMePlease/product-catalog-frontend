@@ -1,7 +1,6 @@
 // @import '../styles/utils/_mixins.scss';
 // @import '../styles/utils/_vars.scss';
 
-
 // $gap-size: 8px;
 // $gap-size-tablet: 12px;
 // $gap-size-desktop: 24px;
@@ -16,7 +15,6 @@
 //   flex-wrap: wrap;
 //   gap: 25px;
 //   flex-direction: column;
-
 
 //   @include onTablet {
 //     flex-direction: row;
@@ -72,7 +70,6 @@
 //         max-height: 75px;
 //       }
 
-
 //       &:hover {
 //         border: 2px solid $accent;
 //       }
@@ -84,7 +81,6 @@
 //       }
 //     }
 //   }
-
 
 //   &-active {
 //     border: 2px solid $primary;
@@ -115,7 +111,6 @@
 @import '../styles/utils/_mixins.scss';
 @import '../styles/utils/_vars.scss';
 
-
 $gap-size: 8px;
 $gap-size-tablet: 12px;
 $gap-size-desktop: 24px;
@@ -131,7 +126,6 @@ $base-height: 50px;
   gap: 25px;
   flex-direction: column;
   align-items: center;
-
 
   @include onTablet {
     flex-direction: row;
@@ -162,7 +156,7 @@ $base-height: 50px;
     }
 
     @include onDesktop {
-      gap: $gap-size-desktop
+      gap: $gap-size-desktop;
     }
 
     &__wrapper {
@@ -186,7 +180,6 @@ $base-height: 50px;
         height: 75px;
       }
 
-
       &:hover {
         border: 2px solid $accent;
       }
@@ -198,7 +191,6 @@ $base-height: 50px;
       }
     }
   }
-
 
   &-active {
     border: 2px solid $primary;
@@ -224,4 +216,3 @@ $base-height: 50px;
     }
   }
 }
-

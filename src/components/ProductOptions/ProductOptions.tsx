@@ -161,9 +161,7 @@ export const ProductOptions: FC<Props> = ({ product }) => {
         </div>
         <div className="color-options">
           {colorsAvailable.map((colorOption) => (
-            <Link
-              to={`/phones/${id.replace(color, colorOption)}`}
-            >
+            <Link to={`/phones/${id.replace(color, colorOption)}`}>
               <div
                 className={classnames('colors-block__wrapper', {
                   active: colorOption === color,
@@ -187,7 +185,10 @@ export const ProductOptions: FC<Props> = ({ product }) => {
           <div className="capacity__options">
             {capacityAvailable.map((option) => (
               <Link
-                to={`/phones/${id.replace(capacity.toLocaleLowerCase(), option.toLocaleLowerCase())}`}
+                to={`/phones/${id.replace(
+                  capacity.toLocaleLowerCase(),
+                  option.toLocaleLowerCase(),
+                )}`}
               >
                 <div
                   className={classnames('capacity__option', {
