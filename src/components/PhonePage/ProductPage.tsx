@@ -6,10 +6,10 @@ import { PhoneDataFromServer as Data } from '../../types/PhoneDataFromServer';
 import { ImageBlock } from '../../ImageBlock';
 import { ProductOptions } from '../ProductOptions';
 import { Loader } from '../Loader';
-import './SingleItemPage.scss';
+import './PhonePage.scss';
 import { BackButton } from '../../images/icons/BackButton';
 
-export const SingleItemPage: FC = () => {
+export const PhonePage: FC = () => {
   const [phoneData, setPhoneData] = useState<Data>();
   const { phoneId } = useParams();
 
@@ -29,9 +29,15 @@ export const SingleItemPage: FC = () => {
     loadPhone();
   }, [phoneId]);
 
-  return !phoneData ? (
-    <Loader />
-  ) : (
+  if (!phoneData) {
+    return (
+      <div className="phones__loader">
+        <Loader />
+      </div>
+    );
+  }
+
+  return (
     <div className="container-item-page">
       <Link to="/">
         <button type="button" className="cart-page__button-back">

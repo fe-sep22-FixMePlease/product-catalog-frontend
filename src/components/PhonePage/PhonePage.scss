@@ -1,3 +1,6 @@
+@import '../../styles/utils/_mixins.scss';
+@import '../../styles/utils/_vars.scss';
+
 .container-item-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -7,15 +10,12 @@
 
   transition: 0.3s;
 
-  @media (min-width: 488px) {
-  }
-
-  @media (min-width: 768px) {
+  @include onTablet {
     padding-left: 24px;
     padding-right: 24px;
   }
 
-  @media (min-width: 1024px) {
+  @include onDesktop {
     padding-left: 24px;
     padding-right: 24px;
   }
@@ -29,22 +29,18 @@
     margin-bottom: 8px;
 
     .spec-title {
-      color: #89939a;
-      font-family: 'Mont';
-      font-style: normal;
+      color: $secondary;
       font-weight: 600;
       font-size: 12px;
-      line-height: 15px;
 
       &__main {
-        color: #89939a;
+        color: $secondary;
         font-weight: 500;
         font-size: 14px;
       }
     }
 
     .spec-value {
-      font-family: 'Mont';
       font-style: normal;
       font-weight: 700;
       font-size: 12px;
@@ -56,12 +52,4 @@
       }
     }
   }
-}
-
-.loader-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh - 10px);
-  overflow: auto;
 }

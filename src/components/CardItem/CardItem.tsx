@@ -36,7 +36,7 @@ export const CardItem: React.FC<Props> = ({ phone, phones }) => {
     }
   };
 
-  const isSelected = !!shop.find((product) => product.id === id);
+  const isSelected = shop.some((product) => product.id === id);
 
   return (
     <div className="card">

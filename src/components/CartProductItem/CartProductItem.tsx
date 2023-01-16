@@ -12,10 +12,7 @@ type Props = {
 
 export const CartProductItem: React.FC<Props> = ({ productInfo }) => {
   const {
-    // image,
-    name,
-    price,
-    id,
+    image, name, price, id,
   } = productInfo;
 
   const {
@@ -64,8 +61,7 @@ export const CartProductItem: React.FC<Props> = ({ productInfo }) => {
 
         <div className="product-item__image-container">
           <img
-            /* eslint-disable-next-line max-len */
-            src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQJQGrGoRJOlfxJtroHXe2f-91FlEZsQUncf3aWDXfr4wO1oLrpg2j5dOBToubmJMGod52p9_PZ2XTD8UGNL1SajKEWYt37A1ei9Wa8C6xDm1r_j3hDesI5&usqp=CAc"
+            src={image}
             alt="ProductItemImage"
             className="product-item__image"
           />
