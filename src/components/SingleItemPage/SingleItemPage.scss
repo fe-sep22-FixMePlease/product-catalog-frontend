@@ -1,3 +1,4 @@
+
 .container-item-page {
   max-width: 1200px;
   margin: 0 auto;
@@ -56,36 +57,6 @@
       }
     }
   }
-}
-
-.grid-container {
-  display: grid;
-  gap: 75px;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    'image options'
-    'about specs';
-}
-
-.grid > * {
-  margin: 16px;
-}
-
-.grid > .ImageBlock {
-  grid-area: image;
-}
-
-.grid > .ProductOptions {
-  grid-area: options;
-}
-
-.grid > .about {
-  grid-area: about;
-}
-
-.grid > .specs {
-  grid-area: specs;
 }
 
 .loader-container {

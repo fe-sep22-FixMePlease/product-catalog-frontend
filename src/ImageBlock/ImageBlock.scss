@@ -1,43 +1,194 @@
-$color-primary: #4219d0;
-$color-secondary: #e2e6e9;
-$color-tertiary: #0f0f11;
+// @import '../styles/utils/_mixins.scss';
+// @import '../styles/utils/_vars.scss';
+
+
+// $gap-size: 8px;
+// $gap-size-tablet: 12px;
+// $gap-size-desktop: 24px;
+// $border-radius: 4px;
+// $transition-speed: 0.3s;
+// $base-width: 50px;
+// $base-height: 50px;
+
+// .image__block {
+//   display: flex;
+//   justify-content: center;
+//   flex-wrap: wrap;
+//   gap: 25px;
+//   flex-direction: column;
+
+
+//   @include onTablet {
+//     flex-direction: row;
+//   }
+
+//   &__hero {
+//     flex-shrink: 0;
+//     transition: all $transition-speed ease-in-out;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+
+//   &__secondary {
+//     flex-shrink: 0;
+//     display: flex;
+//     flex-direction: row;
+//     object-fit: contain;
+//     justify-content: center;
+//     gap: $gap-size;
+
+//     @include onTablet {
+//       flex-direction: column;
+//       justify-content: flex-start;
+//       max-width: max-content;
+//       gap: $gap-size-tablet;
+//       order: -1;
+//     }
+
+//     @include onDesktop {
+//       gap: $gap-size-desktop
+//     }
+
+//     &__wrapper {
+//       flex-shrink: 1;
+//       background-color: transparent;
+//       align-items: center;
+//       justify-content: center;
+//       border: 2px solid $elements;
+//       border-radius: $border-radius;
+//       max-width: $base-width;
+//       max-height: $base-height;
+//       overflow: hidden;
+//       cursor: pointer;
+
+//       @include onTablet {
+//         max-width: 39px;
+//         max-height: 34px;
+//       }
+
+//       @include onDesktop {
+//         max-width: 75px;
+//         max-height: 75px;
+//       }
+
+
+//       &:hover {
+//         border: 2px solid $accent;
+//       }
+
+//       img {
+//         width: 100%;
+//         height: 100%;
+//         object-fit: contain;
+//       }
+//     }
+//   }
+
+
+//   &-active {
+//     border: 2px solid $primary;
+//   }
+// }
+
+// .image {
+//   &-hero {
+
+//     transition: all $transition-speed ease-in-out;
+//     max-height: 274px;
+//     max-width: 274px;
+//     object-fit: contain;
+
+//     @include onTablet {
+//       order: 1;
+//       max-width: 400x;
+//       max-height: 400px;
+//     }
+
+//     @include onDesktop {
+//       max-width: 484px;
+//       max-height: 484px;
+//     }
+//   }
+// }
+
+@import '../styles/utils/_mixins.scss';
+@import '../styles/utils/_vars.scss';
+
+
 $gap-size: 8px;
+$gap-size-tablet: 12px;
+$gap-size-desktop: 24px;
 $border-radius: 4px;
 $transition-speed: 0.3s;
-$base-width: 80px;
-$base-height: 80px;
+$base-width: 50px;
+$base-height: 50px;
 
 .image__block {
-  justify-content: center;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 25px;
+  flex-direction: column;
+  align-items: center;
+
+
+  @include onTablet {
+    flex-direction: row;
+  }
+
+  &__hero {
+    flex: 1 1 auto;
+    margin: 0 auto;
+    transition: all $transition-speed ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &__secondary {
-    display: inline-flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     object-fit: contain;
+    justify-content: center;
+    gap: $gap-size;
 
-    @media (min-width: 640px) {
-      width: max-content;
-      gap: $gap-size;
+    @include onTablet {
+      flex-direction: column;
+      justify-content: flex-start;
+      max-width: max-content;
+      gap: $gap-size-tablet;
+      order: -1;
+    }
+
+    @include onDesktop {
+      gap: $gap-size-desktop
     }
 
     &__wrapper {
       background-color: transparent;
       align-items: center;
       justify-content: center;
-      border: 2px solid $color-secondary;
+      border: 2px solid $elements;
       border-radius: $border-radius;
       width: $base-width;
       height: $base-height;
       overflow: hidden;
-
       cursor: pointer;
 
-      transition: $transition-speed;
+      @include onTablet {
+        width: 39px;
+        height: 34px;
+      }
+
+      @include onDesktop {
+        width: 75px;
+        height: 75px;
+      }
+
 
       &:hover {
-        border: 2px solid $color-primary;
+        border: 2px solid $accent;
       }
 
       img {
@@ -48,19 +199,29 @@ $base-height: 80px;
     }
   }
 
+
   &-active {
-    border: 2px solid $color-tertiary;
+    border: 2px solid $primary;
   }
 }
 
 .image {
   &-hero {
+    transition: all $transition-speed ease-in-out;
     height: 274px;
+    width: 274px;
     object-fit: contain;
 
-    @media (min-width: 640px) {
-      width: 442px;
-      height: 442px;
+    @include onTablet {
+      order: 1;
+      width: 400x;
+      height: 400px;
+    }
+
+    @include onDesktop {
+      width: 484px;
+      height: 484px;
     }
   }
 }
+
