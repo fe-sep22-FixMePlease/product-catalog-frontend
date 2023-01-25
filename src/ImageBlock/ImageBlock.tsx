@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import classNames from 'classnames';
 import './ImageBlock.scss';
 
-// eslint-disable-next-line max-len
 const BASE_URL
+// eslint-disable-next-line max-len
   = 'https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/';
 
 interface Props {
