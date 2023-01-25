@@ -9,8 +9,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 interface Props {
-  title: string,
-  products: Phone[],
+  title: string;
+  products: Phone[];
 }
 
 export const ProductSlider: React.FC<Props> = ({ title, products }) => {
@@ -22,7 +22,6 @@ export const ProductSlider: React.FC<Props> = ({ title, products }) => {
       className="swiper"
       navigation
       breakpoints={{
-
         320: {
           width: 320,
           slidesPerView: 1,
@@ -44,12 +43,7 @@ export const ProductSlider: React.FC<Props> = ({ title, products }) => {
         },
       }}
     >
-
-      <h2
-        slot="container-start"
-      >
-        {title}
-      </h2>
+      <h2 slot="container-start">{title}</h2>
 
       {products.map((product) => (
         <div key={product.id}>

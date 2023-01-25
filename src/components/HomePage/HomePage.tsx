@@ -23,10 +23,7 @@ export const HomePage: React.FC = () => {
       <h1 className="home__title">Welcome to Nice Gadgets store!</h1>
 
       <Slider />
-      <ProductSlider
-        title="Hot prices"
-        products={phones}
-      />
+      <ProductSlider title="Hot prices" products={phones} />
     </div>
   );
 };
