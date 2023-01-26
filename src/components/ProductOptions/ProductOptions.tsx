@@ -71,7 +71,10 @@ export const ProductOptions: FC<Props> = ({ product }) => {
         <div className="colors-block__container">
           <div className="colors-block__container">
             {colorsAvailable.map((colorOption) => (
-              <Link to={`/phones/${id.replace(color, colorOption)}`} onClick={() => handleColorChange(colorOption)}>
+              <Link
+                to={`/phones/${id.replace(color, colorOption)}`}
+                onClick={() => handleColorChange(colorOption)}
+              >
                 <div
                   className={classnames('colors-block__wrapper', {
                     'colors-block__wrapper-active': colorOption === color,

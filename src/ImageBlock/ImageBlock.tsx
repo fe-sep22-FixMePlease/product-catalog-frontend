@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import './ImageBlock.scss';
 
 const BASE_URL
-  // eslint-disable-next-line max-len
+// eslint-disable-next-line max-len
   = 'https://raw.githubusercontent.com/mate-academy/product_catalog/main/public/';
 
 interface Props {
