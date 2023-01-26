@@ -38,7 +38,7 @@ export const ProductSlider: React.FC<Props> = ({ title, products }) => {
         },
 
         1200: {
-          width: 1200,
+          width: 1140,
           slidesPerView: 4,
         },
       }}

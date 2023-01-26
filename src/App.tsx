@@ -2,6 +2,9 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import { HomePage } from './components/HomePage/index';
 import { PageNotFound } from './components/PageNotFound/index';
 import { Phones } from './components/Phones/index';
+import { Tablets } from './components/Tablets';
+import { Accessories } from './components/Accessories';
+
 import './App.scss';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
@@ -18,6 +21,8 @@ export const App: React.FC = () => (
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<PageNotFound />} />
+          <Route path="/tablets" element={<Tablets />} />
+          <Route path="/accessories" element={<Accessories />} />
           <Route path="/phones" element={<Phones />} />
           <Route path="/phones/:phoneId" element={<SingleItemPage />} />
           <Route path="/shopBag" element={<CartPage />} />
